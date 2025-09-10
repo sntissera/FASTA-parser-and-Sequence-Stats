@@ -26,7 +26,7 @@ cd /path/of/the/project     # Change directory to the path where the project is 
 git init                    # Initialise Git
 git add .                   # Add all files to staging
 git commit -m "Initial commit" #Commit changes
-git remote add origin https://github.com/username/repo-name.git               # Add the GitHub repo
+git remote add origin https://github.com/username/repo-name.git    # Add the GitHub repo
 git branch -M main          # make sure the local branch is main
 git push -u origin main     # push the local directory to GitHub
 ```
