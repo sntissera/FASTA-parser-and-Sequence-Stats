@@ -19,7 +19,27 @@ The FASTA files contain DNA sequences extacted from stool and saliva samples of 
 
 ### Installation
 
-Github repo: https://github.com/sntissera/fasta-stats.git
+The repository was first set up on the local device. It was later cloned to the designated GitHub repository implementing the following bash script on the terminal.
+
+---bash
+cd /path/of/the/project     # Change directory to the path where the project is stored.  
+git init                    # Initialise Git
+git add .                   # Add all files to staging
+git commit -m "Initial commit" #Commit changes
+git remote add origin https://github.com/username/repo-name.git               # Add the GitHub repo
+git branch -M main          # make sure the local branch is main
+git push -u origin main     # push the local directory to GitHub
+---
+
+To update the repository
+
+---bash
+cd /path/of/the/project     # Change directory to the path where the project is stored.  
+git init                    # Initialise Git
+git add filename            # to add a specific file
+git commit -m "Describe your changes here"          # Commit changes
+git push origin main        # Push to Github
+---
 
 ### Project structure
 project/
