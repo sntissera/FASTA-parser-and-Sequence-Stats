@@ -37,17 +37,13 @@ To update the repository
 cd /path/of/the/project     # Change directory to the path where the project is stored.  
 git init                    # Initialise Git
 git add filename            # to add a specific file
-git commit -m "Describe your changes here"          # Commit changes
+git commit -m "Describe your changes here"  #Commit changes
 git push origin main        # Push to Github
 ```
 
 ### Project structure
 project/
-├── data/             # Raw and processed data
-├── scripts/          # Custom scripts
-├── workflow/         # Snakemake/Nextflow or pipeline files
-├── notebooks/        # Jupyter or RMarkdown analysis
-├── results/          # Output (figures, tables, reports)
+├── data/             # Raw and processed data/ fasta files
+├── scripts/          # python scripts
 ├── docs/             # Extended documentation
-├── environment.yml   # Conda environment
 └── README.md         # Project overview
