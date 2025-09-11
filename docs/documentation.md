@@ -47,3 +47,7 @@ project/
 ├── scripts/          # python scripts
 ├── docs/             # Extended documentation
 └── README.md         # Project overview
+
+### Main program
+
+A python file is opened as main.py to store the main operations of the code. This is stored under the scripts folder. os, requests and gzip modules are imported to facilitate the functioning of the code. 
