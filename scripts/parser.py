@@ -3,7 +3,7 @@ import requests, os, gzip
 class Parser:
     '''Parse the FASTA files'''
 
-    def __init__ (self,url,file_name,download_path):
+    def __init__ (self,url:str,file_name:str,download_path:str):
         self.__url = url
         self.__file_name = file_name
         self.download_path = download_path
@@ -45,7 +45,8 @@ class Parser:
             open_file = open
             mode = 'r'
 
-        try:
+        #To test the functionality
+        '''try:
             with open_file(file_path,mode) as f:
                 for i in range(10):
                     line = f.readline()
@@ -55,4 +56,4 @@ class Parser:
         except FileNotFoundError:
             print('File not found')
         except Exception as e:
-            print('Error reading file')
+            print('Error reading file')'''
