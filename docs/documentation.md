@@ -43,11 +43,16 @@ git push origin main        # Push to Github
 
 ### Project structure
 project/
-├── data/             # Raw and processed data/ fasta files
-├── scripts/          # python scripts
-├── docs/             # Extended documentation
-└── README.md         # Project overview
+├── data/                   # Raw and processed data/ fasta files
+    ├── filename.fasta.gz            
+├── scripts/                # python scripts
+    ├── main.py
+    ├── parser.py
+    ├── stats.py
+├── docs/
+    ├── documentation.md    # Extended documentation
+└── README.md               # Project overview
 
 ### Main program
 
-A python file is opened as main.py to store the main operations of the code. This is stored under the scripts folder. os, requests and gzip modules are imported to facilitate the functioning of the code. 
+The program is composed of two classes named Parser and Statistics under the file names parser.py and stat.py respectively. The classes are implemented in the main.py file to provide the functionality desired.
