@@ -7,6 +7,7 @@ download_path = input ('Enter the download path (press enter for current directo
 file = Parser(url,file_name,download_path)
 file.download()
 file.unzip()
+file.
 
 
 
