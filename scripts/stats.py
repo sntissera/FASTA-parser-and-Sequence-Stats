@@ -4,7 +4,7 @@ from collections import Counter
 class Statistics:
     ''' Calculate and analyse the relevant sequence statistics'''
 
-    def __init__ (self,df):
+    def __init__ (self,df:pd.DataFrame):
         self.df = df
         
     def lenSeq (self) -> list:
@@ -25,7 +25,7 @@ class Statistics:
             results.append(formatted)
         return results
     
-    def compPercent (self):
+    def compPercent (self) -> list:
         '''Calculates the percentage of the composition of a sequence'''
 
         results = []
@@ -53,14 +53,30 @@ class Statistics:
             
         return results
 
-    def freq(self):
-        '''Calculates the k-mer frequencies given k'''
-        pass
+class Frequencies:
+    '''Calculates the k-mer frequencies when k is given'''
 
-data = {
-"header": [">seq1", ">seq2"],
-"sequence": ["ATGCGTAC", "MKWVTFISLLFLFSSAYSR"]
-}
-df = pd.DataFrame(data)
-seq = Statistics(df)
-print(seq.gcContent())
+    def __init__ (self,df:pd.DataFrame, k:int):
+        self.df = df
+        self.k = k
+            
+    def subSet (self) -> list:
+        '''Returns a list of k-mers'''
+            
+        results = []
+        for seq in self.df.iloc[:,1]:
+            k_mers = []
+            for i in range(len(seq) - self.k + 1):
+                k_mers.append(seq[i:self.k + i])
+            results.append(k_mers)
+        return results
+    
+    def countSubset (self) -> list:
+        ''' Returns the number of k-mers per sequence'''
+        
+        results = []
+        for s in self.subSet():
+            counts = dict(Counter(s))
+            results.append(counts)
+        return results
+
