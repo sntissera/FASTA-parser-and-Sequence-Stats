@@ -37,7 +37,7 @@ class Parser:
         ''' Unzip gzip files'''
 
         file_path = os.path.join(self.download_path if self.download_path else '.', self.__file_name)
-
+       
         if file_path.endswith ('.gz'):
             open_file = gzip.open
             mode = 'rt'
