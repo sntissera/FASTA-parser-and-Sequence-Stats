@@ -1,13 +1,8 @@
 from parser import Parser
 from stats import Statistics, Frequencies
+from IPython.display import display
 import pandas as pd
 
-def add_data(df,column_name,results):
-    '''Add data to the dataframe'''
-
-    df[column_name] = results
-    return df
-    
 #Inputs given by the user
 url = input('Enter the link: ')
 file_name = input('Enter the name of the file to be renamed as: ')
@@ -20,19 +15,28 @@ file.download()
 #Analysing the sequences
 df = file.unzip()
 
-seq = Statistics(df)
-lengths = seq.lenSeq()
-comp = seq.composition()
-comp_percent = seq.compPercent()
-gc = seq.gcContent()
+raw_data1 = Statistics(df)
+processed = pd.DataFrame(df.iloc[:,0])
 
-seq1 = Frequencies(df,3)
-sbset = seq1.countSubset()
+#Calculate the length of each sequence
+processed['Length'] = raw_data1.lenSeq()
 
-df = (add_data(df,'Length',lengths))
-df = (add_data(df,'Composition',comp))
-df = (add_data(df,'Percentage',comp_percent))
-print(add_data(df,'K-mer Freq',sbset))
+#Calculate the composition and its percentage for each sequence
+processed['Composition'] = raw_data1.composition()
+processed['Percentage composition'] = raw_data1.compPercent()
+
+#Calculate the GC content
+processed['GC content'] = raw_data1.gcContent()
+
+#Summary
+print(processed)
+
+#Calculate the k-mer frequencies
+k = int(input('Enter the k value: '))
+raw_data2 = Frequencies(df,k)
+new = pd.DataFrame(df.iloc[:,0])
+new['K-mer frequencies'] = raw_data2.countSubset()
+print(new)
 
 
 
