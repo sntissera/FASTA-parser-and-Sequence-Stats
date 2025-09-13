@@ -1,6 +1,5 @@
 from parser import Parser
 from stats import Statistics, Frequencies
-from IPython.display import display
 import pandas as pd
 
 #Inputs given by the user
