@@ -1,5 +1,5 @@
 from parser import Parser
-from stats import Statistics
+from stats import Statistics, Frequencies
 import pandas as pd
 
 def add_data(df,column_name,results):
@@ -25,10 +25,14 @@ lengths = seq.lenSeq()
 comp = seq.composition()
 comp_percent = seq.compPercent()
 gc = seq.gcContent()
+
+seq1 = Frequencies(df,3)
+sbset = seq1.countSubset()
+
 df = (add_data(df,'Length',lengths))
 df = (add_data(df,'Composition',comp))
 df = (add_data(df,'Percentage',comp_percent))
-print(add_data(df,'GC content',gc))
+print(add_data(df,'K-mer Freq',sbset))
 
 
 
