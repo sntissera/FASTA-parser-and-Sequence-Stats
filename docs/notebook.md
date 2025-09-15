@@ -11,7 +11,9 @@ This simple project focuses on parsing compressed FASTA files can be downloaded 
 * Sequence length distributions (total sequence length, average sequence length)
 * K-mer frequencies
 
-The FASTA files contain DNA sequences extacted from stool and saliva samples of 9 patients (diseased) and 10 healthy subjects. The sequences were sequenced using v3-v4 16s rRNA sequencing to characterise the differences in microbiota between specimens of breast cancer and healthy surrounding tissue in adult Algerian females (Link to the relavant paper: https://doi.org/10.3390/genes16070806).
+The program was tested for multiple FASTA files downloaded from the ncbi nucleotide and amino acid sequence database. Below are some of te files that were used to test the code.
+
+1. The FASTA files contain DNA sequences extacted from stool and saliva samples of 9 patients (diseased) and 10 healthy subjects. The sequences were sequenced using v3-v4 16s rRNA sequencing to characterise the differences in microbiota between specimens of breast cancer and healthy surrounding tissue in adult Algerian females (Link to the relavant paper: https://doi.org/10.3390/genes16070806).
 
 - Date and time of download: 10/09/2025, 11:48
 - Source:  https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE243440 
@@ -53,6 +55,10 @@ project/
     ├── documentation.md    # Extended documentation
 └── README.md               # Project overview
 
-### Main program
+### Program Structure
 
-The program is composed of two classes named Parser and Statistics under the file names parser.py and stat.py respectively. The classes are implemented in the main.py file to provide the functionality desired.
+The program is composed of three classes named Parser, Statistics and Frequencies. The class Parser is written in parser.py file and the classes Statistics and Frequencies are written in stat.py file respectively. The classes are implemented in the main.py file and provides a statistical summary of the intended FASTA file.
+
+### 
+
+
