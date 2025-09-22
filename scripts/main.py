@@ -9,11 +9,16 @@ download_path = input ('Enter the download path (press enter for current directo
 
 #Downloading the files
 file = Parser(url,file_name,download_path)
-file.download()
+
+if file_name.endswith((".fasta",'.fa','.fna')):
+    file.download_fasta()
+else:
+    file.download_gz()
+
+#Reading and opening the FASTA files
+df = file.fasta_process()
 
 #Analysing the sequences
-df = file.unzip()
-
 raw_data1 = Statistics(df)
 processed = pd.DataFrame(df.iloc[:,0])
 
@@ -36,6 +41,7 @@ raw_data2 = Frequencies(df,k)
 new = pd.DataFrame(df.iloc[:,0])
 new['K-mer frequencies'] = raw_data2.countSubset()
 print(new)
+
 
 
 
